@@ -22,5 +22,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Generate and report coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2
+      - name: Run tests
+        run: npm test
+
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@main
+        with:
+          coverage-summary-path: coverage/coverage-final.json
