@@ -27,9 +27,19 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npx jest --coverage --coverageReporters json-summary
+        run: npm test
 
-      - name: Jest Coverage Comment
-        uses: MishaKav/jest-coverage-comment@main
+      # - name: Run tests
+      #   run: npx jest --coverage --coverageReporters json-summary
+
+      # - name: Jest Coverage Comment
+      #   uses: MishaKav/jest-coverage-comment@main
+      #   with:
+      #     coverage-summary-path: coverage/coverage-summary.json
+
+      - name: Generate and report coverage
+        uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          coverage-summary-path: coverage/coverage-summary.json
+          skip-step: all
+          coverage-file: coverage/coverage-final.json
+          base-coverage-file: coverage/coverage-final.json
