@@ -8,3 +8,4 @@ export const divide = (a: number, b: number): number => {
 };
 export const power = (base: number, exponent: number): number =>
   Math.pow(base, exponent);
+export const square = (a: number): number => a * a;
