@@ -26,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
-        run: npm test
+      # - name: Run tests
+      #   run: npm test
 
       # - name: Run tests
       #   run: npx jest --coverage --coverageReporters json-summary
@@ -39,6 +39,7 @@ jobs:
       - name: Generate and report coverage
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          skip-step: all
+          skip-step: install
+          test-script: TZ=UTC jest --coverage
           coverage-file: coverage/coverage-final.json
           # base-coverage-file: coverage/coverage-final.json
