@@ -39,8 +39,9 @@ jobs:
       - name: Publish coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          report_path: coverage/lcov-report
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip-step: install
+          test-script: npm test
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Run tests
       #   run: npm test
