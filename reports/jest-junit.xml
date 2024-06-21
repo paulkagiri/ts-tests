@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="0.234">
+  <testsuite name="tests/math.test.ts" errors="0" failures="0" skipped="0" timestamp="2024-06-21T06:01:56" time="0.191" tests="6">
+    <testcase classname="-adds 1 + 2 to equal 3" name="-adds 1 + 2 to equal 3" time="0.001">
+    </testcase>
+    <testcase classname="-subtracts 5 - 2 to equal 3" name="-subtracts 5 - 2 to equal 3" time="0">
+    </testcase>
+    <testcase classname="-multiplies 3 * 4 to equal 12" name="-multiplies 3 * 4 to equal 12" time="0">
+    </testcase>
+    <testcase classname="-divides 10 / 2 to equal 5" name="-divides 10 / 2 to equal 5" time="0.001">
+    </testcase>
+    <testcase classname="-dividing by zero throws error" name="-dividing by zero throws error" time="0.003">
+    </testcase>
+    <testcase classname="-power of 2^3 to equal 8" name="-power of 2^3 to equal 8" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

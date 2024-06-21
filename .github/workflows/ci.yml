@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: read
       pull-requests: write
       repository-projects: write
+      checks: write
 
     steps:
       - name: Checkout repository
@@ -26,6 +28,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Jest Tests
+          path: reports/jest-*.xml
+          reporter: jest-junit
+
       # - name: Run tests
       #   run: npm test
 
@@ -36,10 +46,10 @@ jobs:
       #   with:
       #     coverage-summary-path: coverage/coverage-summary.json
 
-      - name: Generate and report coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          skip-step: install
-          test-script: jest --coverage
-          # coverage-file: coverage/coverage-final.json
-          # base-coverage-file: coverage/coverage-final.json
+      # - name: Generate and report coverage
+      #   uses: ArtiomTr/jest-coverage-report-action@v2
+      #   with:
+      #     skip-step: install
+      #     test-script: jest --coverage
+      # coverage-file: coverage/coverage-final.json
+      # base-coverage-file: coverage/coverage-final.json
