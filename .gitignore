@@ -9,6 +9,8 @@ node_modules
 # testing
 coverage
 coverage.json
+.scannerwork
+sonar-project.properties
 
 # next.js
 .next/
