@@ -28,6 +28,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
+
       # - name: Test Report
       #   uses: dorny/test-reporter@v1
       #   if: success() || failure()
@@ -36,12 +42,12 @@ jobs:
       #     path: reports/jest-*.xml
       #     reporter: jest-junit
 
-      - name: Publish coverage report
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          skip-step: install
-          test-script: npm test
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Publish coverage report
+      #   uses: ArtiomTr/jest-coverage-report-action@v2
+      #   with:
+      #     skip-step: install
+      #     test-script: npm test
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Run tests
       #   run: npm test
