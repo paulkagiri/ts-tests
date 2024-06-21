@@ -37,7 +37,7 @@ jobs:
       #     reporter: jest-junit
 
       - name: Publish coverage report
-        uses: ArtiomTr/jest-coverage-report-action@v1
+        uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           report_path: coverage/lcov-report
           github_token: ${{ secrets.GITHUB_TOKEN }}
